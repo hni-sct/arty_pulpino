@@ -12,7 +12,7 @@ if { ![info exists ::env(XILINX_BOARD)] } {
 
 if { ![info exists ::env(USE_ZERO_RISCY)] } {
   puts "USE_ZERO_RISCY = 0"
-  set ::env(USE_ZERO_RISCY) 0
+  set ::env(USE_ZERO_RISCY) 1
 } else {
   puts "USE_ZERO_RISCY = 1"
 }
@@ -30,7 +30,7 @@ if { ![info exists ::env(ZERO_RV32M)] } {
 }
 if { ![info exists ::env(ZERO_RV32E)] } {
   puts "ZERO_RV32E = 0"
-  set ::env(ZERO_RV32E) 0
+  set ::env(ZERO_RV32E) 1
 } else {
   puts "ZERO_RV32E = 1"
 }

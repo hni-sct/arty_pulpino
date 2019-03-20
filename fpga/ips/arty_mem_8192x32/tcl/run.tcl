@@ -1,10 +1,10 @@
 
 if { ![info exists ::env(XILINX_PART)] } {
-  set ::env(XILINX_PART) "xc7z020clg484-1"
+  set ::env(XILINX_PART) "xc7a35ticsg324-1L"
 }
 
 if { ![info exists ::env(XILINX_BOARD)] } {
-  set ::env(XILINX_BOARD) "em.avnet.com:zynq:zed:c"
+  set ::env(XILINX_BOARD) "digilentinc.com:arty:part0:1.1"
 }
 
 set partNumber $::env(XILINX_PART)
