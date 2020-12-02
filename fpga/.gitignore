@@ -15,3 +15,9 @@ vivado*log
 *.bin
 *.txt
 *.prm
+*.edn
+*.edf
+*.dcp
+*.veo
+*.xci
+*.rpt
