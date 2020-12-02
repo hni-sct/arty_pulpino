@@ -70,7 +70,10 @@ source tcl/src_files.tcl
 # add memory cuts
 add_files -norecurse $FPGA_IPS/arty_mem_8192x32/ip/xilinx_mem_8192x32.dcp
 add_files -norecurse $FPGA_IPS/arty_dmem_8192x32/ip/xilinx_dmem_8192x32.dcp
-add_files -norecurse $FPGA_IPS/xilinx_fp_fma/ip/xilinx_fp_fma.dcp
+
+if {$::env(RISCY_RV32F)} {
+    add_files -norecurse $FPGA_IPS/xilinx_fp_fma/ip/xilinx_fp_fma.dcp
+}
 
 source ./tcl/ips_add_files.tcl
 if {$::env(USE_ZERO_RISCY)==0} {

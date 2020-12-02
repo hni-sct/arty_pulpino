@@ -1,7 +1,13 @@
 PROJECT:=pulpino
 
+ENV := USE_ZERO_RISCY=1 \
+	   RISCY_RV32F=0 \
+	   ZERO_RV32E=0 \
+	   RISCY_RV32F=0 \
+	   ZERO_RV32M=1
+
 all:
-	vivado -mode batch -source tcl/run.tcl
+	${ENV} vivado -mode batch -source tcl/run.tcl
 	# ./postsynth_names.py
 
 gui:
