@@ -75,7 +75,7 @@ wire reset_n = ~btn[3]; // btn[3] : global hardware reset, low active
 assign led[3] = pll_locked; // LED[3]: pll clocked
 assign led[2] = uart_tx;    // LED[2]: uart tx
 assign led[1] = 1'b1;
-assign led[0] = 1'bz;
+assign led[0] = gpio_out[0];
 
 // clk_wiz
 wire clk_cpu;
