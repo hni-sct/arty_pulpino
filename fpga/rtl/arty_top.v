@@ -5,6 +5,9 @@ module arty_top (
     input [3:0] btn,
     output [3:0] led,
 
+    // gpios
+    inout [31:0] gpio,
+
     // QSPI
     output qspi_clk,
     output qspi_cs_n,
@@ -47,6 +50,15 @@ IOBUF qspi_iobuf[3:0]
   .T(spi_master_oen)
 );
 
+IOBUF gpio_iobuf[31:0]
+(
+  .IO(gpio),
+  .O(gpio_in),
+  .I(gpio_out),
+  .T(gpio_dir)
+);
+
+
 // I2C
 wire scl_in = 1'b0;
 wire scl_out;
@@ -56,7 +68,7 @@ wire sda_out;
 wire sda_oen;
 
 // GPIO
-wire [31:0] gpio_in = 32'd0;
+wire [31:0] gpio_in;
 wire [31:0] gpio_out;
 wire [31:0] gpio_dir;
 
@@ -75,7 +87,7 @@ wire reset_n = ~btn[3]; // btn[3] : global hardware reset, low active
 assign led[3] = pll_locked; // LED[3]: pll clocked
 assign led[2] = uart_tx;    // LED[2]: uart tx
 assign led[1] = 1'b1;
-assign led[0] = gpio_out[0];
+//assign led[0] = gpio_out[0];
 
 // clk_wiz
 wire clk_cpu;
