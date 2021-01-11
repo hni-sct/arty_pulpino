@@ -55,7 +55,7 @@ IOBUF gpio_iobuf[31:0]
   .IO(gpio),
   .O(gpio_in),
   .I(gpio_out),
-  .T(gpio_dir)
+  .T(~gpio_dir)
 );
 
 
