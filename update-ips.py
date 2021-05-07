@@ -73,17 +73,17 @@ print "Using remote git server %s, remote is %s" % (server, remote)
 if os.path.exists("ipstools") and os.path.isdir("ipstools"):
     cwd = os.getcwd()
     os.chdir("ipstools")
-    execute("git pull origin verilator", silent=True)
+    execute("git pull origin verilator-pulpino", silent=True)
     os.chdir(cwd)
     import ipstools
 else:
     # try to find the ipstools repository
     if "http" in remote:
-        if execute("git clone %s/IPApproX.git ipstools -b verilator" % (remote)) != 0:
-            execute("git clone %s/pulp-tools/IPApproX.git ipstools -b verilator" % (server))
+        if execute("git clone %s/IPApproX.git ipstools -b verilator-pulpino" % (remote)) != 0:
+            execute("git clone %s/pulp-tools/IPApproX.git ipstools -b verilator-pulpino" % (server))
     else:
-        if execute("git clone %s/IPApproX.git ipstools -b verilator" % (remote)) != 0:
-            execute("git clone %s:pulp-tools/IPApproX.git ipstools -b verilator" % (server))
+        if execute("git clone %s/IPApproX.git ipstools -b verilator-pulpino" % (remote)) != 0:
+            execute("git clone %s:pulp-tools/IPApproX.git ipstools -b verilator-pulpino" % (server))
 
     import ipstools
 
