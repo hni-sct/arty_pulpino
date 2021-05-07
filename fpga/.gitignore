@@ -21,3 +21,4 @@ vivado*log
 *.veo
 *.xci
 *.rpt
+*.bit
