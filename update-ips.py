@@ -21,7 +21,8 @@ def execute_out(cmd, silent=False):
     return out
 
 def find_server():
-    stdout = execute_out("git remote -v")
+    stdout = "origin\thttps://github.com/pulp-platform/pulpino.git (fetch)\n"\
+             "origin\thttps://github.com/pulp-platform/pulpino.git (push)"
 
     stdout = stdout.split('\n')
     for line in stdout:
