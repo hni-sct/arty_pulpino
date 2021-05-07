@@ -54,8 +54,8 @@ axi/axi_slice:
   commit: pulpinov1
 axi/axi_slice_dc:
   commit: pulpinov1
-axi/axi_spi_master:
-  commit: pulpinov1
+#axi/axi_spi_master:
+#  commit: pulpinov1
 axi/axi_spi_slave:
   commit: pulpinov1
 axi/core2axi:
